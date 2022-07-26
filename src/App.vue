@@ -1,20 +1,79 @@
-<template>
+<template onscroll="onScroll">
+  <!-- Every section is divided by components  -->
   <Navbar/>
-  <Hero/>
-  <Tiles/>
+  <Hero class="hero"/>
+  <Tiles class="section"/>
+  <CallToAction class="section"/>
+  <Stats class="section"/>
+  <Steps class="section"/>
+  <Feedbacks class="section"/>
+  <PricingTable class="section"/>
 </template>
 
 <script>
 import Navbar from './components/layout/Navbar.vue'
 import Hero from './components/Hero.vue'
 import Tiles from './components/Tiles.vue'
+import CallToAction from './components/CallToAction.vue'
+import Stats from './components/Stats.vue'
+import Steps from './components/Steps.vue'
+import Feedbacks from './components/Feedbacks.vue'
+import PricingTable from './components/PricingTable.vue'
 
 export default {
   name: 'App',
   components: {
     Navbar,
     Hero,
-    Tiles
+    Tiles,
+    CallToAction,
+    Stats,
+    Steps,
+    Feedbacks,
+    PricingTable
+  },
+  created () {
+    window.addEventListener('scroll', this.onScroll);
+  },
+  mounted() {
+    // if (document.readyState == "complete") {
+      document.getElementsByClassName('hero')[0].classList.add("loaded");
+    // }
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.onScroll);
+  },
+  data () {
+    return {
+      offsetTop: window.pageYOffset || document.documentElement.scrollTop
+    }
+  },
+  watch: {
+    offsetTop () {
+       this.callbackFunc()
+    }
+  },
+  methods: {
+    onScroll () {
+      this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
+    },
+    isElementInViewport(el) {
+      var rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom - 250 <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    },
+    callbackFunc() {
+      let items = document.querySelectorAll(".section");
+      for (var i = 0; i < items.length; i++) {
+        if (this.isElementInViewport(items[i])) {
+          items[i].classList.add("in-view");
+        }
+      }
+    }
   }
 }
 </script>
@@ -58,6 +117,10 @@ a {
   color: inherit;
 }
 
+ul {
+  list-style: none;
+}
+
 button, input[type="submit"], input[type="reset"] {
 	background: none;
 	color: inherit;
@@ -76,52 +139,30 @@ button, input[type="submit"], input[type="reset"] {
   margin: 0 auto;
 }
 
-// Global Button Styles
-.btn-primary {
-  font-weight: 700;
-  padding: 1.1rem 4rem;
-  border-radius: 1rem;
-  background-color: var(--primary);
-  color: #fff;
-  position: relative;
-  top: 0px;
-  transition: top 0.3s;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 1rem;
-    z-index: -1;
-    filter: blur(25px);
-    background-color: rgba(21, 92, 231, 0.5);
-    transition: top 0.3s;
-  }
-
-  &:hover {
-    top: -5px;
-
-    &:before {
-      top: 15px;
-    }
-  }
+// Load animations
+/* .section {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(7%);
+  transition: all 0.3s ease;
 }
+.in-view {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0%);
+}
+.loaded {
+  animation: fadeIn 0.3s ease;
+} */
 
-.btn-secondary {
-  font-weight: 700;
-  padding: 1.1rem 4rem;
-  border-radius: 1rem;
-  background-color: var(--primary-light);
-  color: var(--primary);
-  position: relative;
-  top: 0px;
-  transition: top 0.3s;
-
-  &:hover {
-    top: -5px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(7%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
   }
 }
 </style>

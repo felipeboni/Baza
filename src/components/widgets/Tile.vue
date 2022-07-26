@@ -38,7 +38,7 @@ export default {
 
     span {
         line-height: 150%;
-        color: var(--secondary);
+        color: var(--text-body);
         letter-spacing: 0.5px;
     }
 }

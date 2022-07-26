@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  margin: 8rem auto;
+  margin: 8.5rem auto;
 
   ul {
     display: grid;

@@ -1,16 +1,10 @@
 <template>
     <li class="item-container">
-        <a :href='itemLink'>{{ itemTitle }} &nbsp; <font-awesome-icon v-if="hasDropdown" icon="fas fa-chevron-down" size="2xs"/></a>
-        <div v-if="hasDropdown" class="dropdown-container">
+        <a :href='itemLink'>{{ itemTitle }} &nbsp; <font-awesome-icon v-if="dropdownItems.length > 0" icon="fas fa-chevron-down" size="2xs"/></a>
+        <div v-if="dropdownItems.length > 0" class="dropdown-container">
             <ul>
-                <li>
-                    <a href="#">Link 1</a>
-                </li>
-                <li>
-                    <a href="#">Link 1</a>
-                </li>
-                <li>
-                    <a href="#">Link 1</a>
+                <li v-for="item of dropdownItems" :key=item.url>
+                    <a :href=item.url >{{ item.title }}</a>
                 </li>
             </ul>
         </div>
@@ -30,10 +24,13 @@ export default {
   props: {
       itemTitle: String,
       itemLink: String,
-      hasDropdown: Boolean
+      dropdownItems: Array
   },
   components:  {
     'font-awesome-icon': FontAwesomeIcon
+  },
+  computed: {
+    console: () => console
   }
   
 }
@@ -73,7 +70,7 @@ li.item-container {
 
     .dropdown-container {
         position: absolute;
-        width: 100%;
+        width: max-content;
         top: 50px;
         left: 0px;
         z-index: 999;
@@ -98,19 +95,20 @@ li.item-container {
             padding: 0.5rem;
 
             li a {
-                padding: 0.875rem;
+                padding: 0.875rem 1.2rem;
                 width: 100%;
                 display: inline-block;
-                color: var(--secondary);
+                color: var(--dark);
                 background: var(--background);
                 border-radius: 0.25rem;
+                opacity: 0.5;
+                font-size: 0.875rem;
 
-
-                transition: color 0.2s, background 0.2s;
+                transition: opacity 0.2s, background 0.2s;
 
                 &:hover {
-                    color: var(--dark);
-                    background-color: #f0f0f0;
+                    background-color: #f7f7f7;
+                    opacity: 1;
                 }
             }
         }

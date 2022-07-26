@@ -6,10 +6,14 @@
     <div class="menu-container">
         <ul>
             <!-- <a href="#">Shop</a> -->
-            <MenuItem item-title="Shop" item-link="#" :has-dropdown="false"/>
-            <MenuItem item-title="Sell Online" item-link="#" :has-dropdown="true"/>
-            <MenuItem item-title="Blog" item-link="#" :has-dropdown="true"/>
-            <MenuItem item-title="Contact Us" item-link="#" :has-dropdown="true"/>
+            <MenuItem item-title="Shop" item-link="#" :dropdown-items="[]" />
+
+            <MenuItem item-title="Sell Online" item-link="#" :dropdown-items="[{title: 'My account', url: '#'}, {title: 'Cart', url: '#'}, {title: 'Checkout', url: '#'}]"/>
+
+            <MenuItem item-title="Blog" item-link="#" :dropdown-items="[{title: 'Blog One Column', url: '#'}, {title: 'Blog One Column With Sidebar', url: '#'}, {title: 'Blog One Column', url: '#'}, {title: 'Blog One Column With Sidebar', url: '#'}]"/>
+
+            <MenuItem item-title="Contact Us" item-link="#" :dropdown-items="[{title: 'Contact Us 1', url: '#'}, {title: 'Contact Us 2', url: '#'}, {title: 'Contact Us 3', url: '#'}, {title: 'Contact Us 4', url: '#'}]"/>
+            
             <li>
                 <button type="button">Buy Now</button>
             </li>

@@ -19,8 +19,9 @@
         />
       </div>
       <div class="hero-buttons">
-        <button type="button" class="btn-primary">Get started</button>
-        <button type="button" class="btn-secondary">Learn more</button>
+        <!-- <button type="button" class="btn-primary">Get started</button> -->
+        <Button btn-type="primary" />
+        <Button btn-type="secondary" />
       </div>
 
       <div class="hero-img">
@@ -35,8 +36,14 @@
 </template>
 
 <script>
+import Button from './widgets/Button.vue'
+
 export default {
   name: "HeroSection",
+  components: {
+    Button
+  }
+    
 };
 </script>
 
@@ -59,7 +66,7 @@ export default {
       display: block;
       margin-top: 1rem;
       font-size: 1.2rem;
-      color: var(--secondary);
+      color: var(--text-body);
       padding: 0 0.5rem;
       line-height: 150%;
       letter-spacing: 0.5px;
@@ -95,7 +102,7 @@ export default {
       margin-right: 1rem;
     }
 
-    .btn-secondary {
+    .btn-text-body {
       margin-left: 1rem;
     }
   }
