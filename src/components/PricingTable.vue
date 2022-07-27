@@ -30,47 +30,47 @@
           <li>
             <font-awesome-icon icon="fa-solid fa-circle-question" size="2xl" color="var(--text-accent)"/>
             <div class="text">
-              <h2>Install the app</h2>
+              <h2>How does the app work?</h2>
               <span>Easy to install the app, no specific skills needed. Take everything under control with Baza.</span>
             </div>
           </li>
 
-          <li>
+          <li style="grid-column: 1;">
             <font-awesome-icon icon="fa-solid fa-circle-question" size="2xl" color="var(--text-accent)"/>
             <div class="text">
-              <h2>Set the goals</h2>
+              <h2>Which operating system is app compatible with?</h2>
               <span>Easy to install the app, no specific skills needed. Take everything under control with Baza.</span>
             </div>
           </li>
 
-          <li>
+          <li style="grid-column: 1;">
             <font-awesome-icon icon="fa-solid fa-circle-question" size="2xl" color="var(--text-accent)"/>
             <div class="text">
-              <h2>Create tasks</h2>
+              <h2>How can I get report?</h2>
               <span>Easy to install the app, no specific skills needed. Take everything under control with Baza.</span>
             </div>
           </li>
 
-          <li>
+          <li style="grid-column: 2;grid-row: 1;">
             <font-awesome-icon icon="fa-solid fa-circle-question" size="2xl" color="var(--text-accent)"/>
             <div class="text">
-              <h2>Install the app</h2>
+              <h2>Can I get a refund?</h2>
               <span>Easy to install the app, no specific skills needed. Take everything under control with Baza.</span>
             </div>
           </li>
 
-          <li>
+          <li style="grid-column: 2;grid-row: 2;">
             <font-awesome-icon icon="fa-solid fa-circle-question" size="2xl" color="var(--text-accent)"/>
             <div class="text">
-              <h2>Set the goals</h2>
+              <h2>Where will my activity be stored?</h2>
               <span>Easy to install the app, no specific skills needed. Take everything under control with Baza.</span>
             </div>
           </li>
 
-          <li>
+          <li style="grid-column: 2;">
             <font-awesome-icon icon="fa-solid fa-circle-question" size="2xl" color="var(--text-accent)"/>
             <div class="text">
-              <h2>Create tasks</h2>
+              <h2>How to chose the right plan?</h2>
               <span>Easy to install the app, no specific skills needed. Take everything under control with Baza.</span>
             </div>
           </li>
@@ -160,6 +160,12 @@ section {
           grid-template-columns: repeat(auto-fill, 560px);
         }
 
+        @media screen and (max-width: 768px) {
+          li {
+            grid-column: 1 !important;
+          }
+        }
+
         li {
           display: flex;
           gap: 1.2rem;
@@ -168,6 +174,7 @@ section {
 
           h2 {
             margin-bottom: 0.5rem;
+            font-size: 1.2rem;
           }
 
           span {

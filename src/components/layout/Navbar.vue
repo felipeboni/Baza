@@ -187,6 +187,8 @@ export default {
         cursor: pointer;
         position: relative;
         z-index: 999;
+        top: 0;
+        right: 0;
 
         .bar-top,
         .bar-middle,
@@ -196,7 +198,7 @@ export default {
           border-radius: 5px;
           margin: 3px 0;
           transform-origin: left;
-          transition: all 0.5s;
+          transition: all 0.3s;
         }
 
         &.active {
