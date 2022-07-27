@@ -116,13 +116,11 @@ export default {
     margin: 3rem auto 0 auto;
     justify-content: center;
     gap: 1rem;
+  }
 
-    .btn-primary {
-      margin-right: 1rem;
-    }
-
-    .btn-text-body {
-      margin-left: 1rem;
+  @media screen and (min-width: 768px) {
+    .hero-buttons {
+      gap: 3rem;
     }
   }
 
