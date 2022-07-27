@@ -44,11 +44,15 @@ export default {
   .inner-container {
     text-align: left;
     display: grid;
-    gap: 7rem;
+    grid-template-columns: repeat(auto-fill, 100%);
     margin-left: auto;
     width: fit-content;
-    grid-template-columns: 600px 250px;
     align-items: center;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 600px 250px;
+      gap: 7rem;
+    }
 
     .text {
       position: relative;
@@ -57,16 +61,29 @@ export default {
       .img-left {
         position: absolute;
         width: 100%;
-        max-width: 270px;
-        left: -47%;
-        top: -82%;
+        max-width: 235px;
+        left: 0;
+        top: -144px;
       }
-
+      
       h1 {
+        margin-top: 13rem;
         font-size: 2.6rem;
         font-weight: 800;
         line-height: 150%;
         margin-bottom: 1rem;
+      }
+
+      @media screen and (min-width: 768px) {
+        .img-left {
+          max-width: 270px;
+          left: -47%;
+          top: -82%;
+        }
+
+        h1 {
+          margin-top: 0;
+        }
       }
 
       span {

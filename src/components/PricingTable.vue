@@ -152,9 +152,13 @@ section {
 
       ul {
         display: grid;
-        grid-template-columns: repeat(auto-fill, 560px);
+        grid-template-columns: repeat(auto-fill, 100%);
         justify-content: center;
         margin-top: 8rem;
+
+        @media screen and (min-width: 768px) {
+          grid-template-columns: repeat(auto-fill, 560px);
+        }
 
         li {
           display: flex;

@@ -49,8 +49,12 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  padding-top: 6rem;
+  padding-top: 1rem;
   text-align: center;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 6rem;
+  }
 
   .hero-text {
     position: relative;
@@ -58,8 +62,14 @@ export default {
     margin: 0 auto;
 
     h1 {
-      font-size: 3.3rem;
+      font-size: 2.6rem;
       font-weight: 800;
+    }
+
+    @media screen and (min-width: 768px) {
+      h1 {
+        font-size: 3.3rem;
+      }
     }
 
     span {
@@ -73,12 +83,9 @@ export default {
     }
 
     .bg-img-right {
-      position: absolute;
-      width: 100%;
-      max-width: 500px;
-      right: -100%;
-      top: 0px;
-      z-index: -2;
+      position: relative;
+      width: 80%;
+      margin-top: 2rem;
     }
 
     .bg-img-left {
@@ -89,13 +96,25 @@ export default {
       top: 0px;
       z-index: -2;
     }
+
+    @media screen and (min-width: 768px) {
+      .bg-img-right {
+        position: absolute;
+        width: 100%;
+        max-width: 500px;
+        right: -100%;
+        top: 0px;
+        z-index: -2;
+      }
+    }
   }
 
   .hero-buttons {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 225px);
     max-width: 500px;
     margin: 3rem auto 0 auto;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1rem;
 
     .btn-primary {
@@ -108,14 +127,23 @@ export default {
   }
 
   .hero-img {
-    margin: 9rem auto 0 auto;
+    margin: 4rem auto 0 auto;
     // animation: float 3s ease infinite alternate;
 
     img {
       border-radius: 2rem;
       box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.2);
-      max-width: 80%;
+      max-width: 100%;
     }
+
+    @media screen and (min-width: 768px) {
+      margin: 9rem auto 0 auto;
+
+      img {
+        max-width: 80%;
+      }
+    }
+    
   }
 }
 

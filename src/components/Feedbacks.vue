@@ -49,9 +49,14 @@ section {
   .container {
     ul {
       display: grid;
-      grid-template-columns: 1fr 1px 1fr;
-      gap: 5rem;
+      grid-template-columns: repeat(auto-fill, 100%);
+      gap: 1rem;
       list-style: none;
+
+      @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1px 1fr;
+        gap: 5rem;
+      }
 
       .dotted-line {
         height: 100%;

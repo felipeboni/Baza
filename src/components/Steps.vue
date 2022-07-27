@@ -62,7 +62,7 @@ export default {
 .container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 5rem 0;
+  padding: 5rem 20px;
 
   .headline {
     margin: auto;
@@ -90,8 +90,12 @@ export default {
     padding: 0 20px;
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, 100%);
     gap: 1.3rem;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
 
     .stats-img {
       img {

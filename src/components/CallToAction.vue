@@ -35,7 +35,11 @@ section {
 
   .container-lg {
     display: grid;
-    grid-template-columns: 1fr 700px;
+    grid-template-columns: repeat(auto-fill, 100%);
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 700px;
+    }
 
     .cta-info {
       margin: auto 0;
@@ -58,6 +62,10 @@ section {
     }
 
     .cta-img {
+      @media screen and (max-width: 768px) {
+        grid-row: 1;
+      }
+
       img {
         max-width: 100%;
       }
