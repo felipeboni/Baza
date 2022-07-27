@@ -1,5 +1,5 @@
 <template>
-    <a v-if="btnType == 'primary'" href="#" class="btn btn-primary">Get started</a>
+    <a v-if="btnType == 'primary'" :href="btnLink ? btnLink : '#'" class="btn btn-primary">Get started</a>
     <a v-if="btnType == 'secondary'" href="#" class="btn btn-secondary">Learn more</a>
 </template>
 
@@ -7,7 +7,8 @@
 export default {
   name: "HeroSection",
   props: {
-    btnType: String
+    btnType: String,
+    btnLink: String,
   }
 };
 </script>

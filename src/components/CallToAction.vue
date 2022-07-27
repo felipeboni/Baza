@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="cta-container">
+    <div class="container-lg">
       <div class="cta-info">
         <h1>Accurate and easy platform for productivity tracking</h1>
         <span
@@ -33,10 +33,7 @@ section {
   background-color: #fcfcfd;
   padding: 6rem 0 4rem 0;
 
-  .cta-container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 20px;
+  .container-lg {
     display: grid;
     grid-template-columns: 1fr 700px;
 

@@ -8,6 +8,8 @@
   <Steps class="section"/>
   <Feedbacks class="section"/>
   <PricingTable class="section"/>
+  <FooterCTA class="section"/>
+  <Footer />
 </template>
 
 <script>
@@ -19,6 +21,8 @@ import Stats from './components/Stats.vue'
 import Steps from './components/Steps.vue'
 import Feedbacks from './components/Feedbacks.vue'
 import PricingTable from './components/PricingTable.vue'
+import FooterCTA from './components/FooterCTA.vue'
+import Footer from './components/layout/Footer.vue'
 
 export default {
   name: 'App',
@@ -30,7 +34,9 @@ export default {
     Stats,
     Steps,
     Feedbacks,
-    PricingTable
+    PricingTable,
+    FooterCTA,
+    Footer
   },
   created () {
     window.addEventListener('scroll', this.onScroll);
@@ -135,6 +141,12 @@ button, input[type="submit"], input[type="reset"] {
 // Global Container Styles
 .container {
   max-width: 1160px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.container-lg {
+  max-width: 1300px;
   padding: 0 20px;
   margin: 0 auto;
 }
